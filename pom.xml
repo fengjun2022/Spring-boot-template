@@ -16,9 +16,9 @@
 
 
 	<modules>
-		<module>court-common</module>
-		<module>court-pojo</module>
-		<module>court-server</module>
+		<module>common</module>
+		<module>pojo</module>
+		<module>server</module>
 	</modules>
 
 	<properties>
