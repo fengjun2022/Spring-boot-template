@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.16</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nangtong</groupId>
+	<artifactId>nangtong-court</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+
+	<modules>
+		<module>court-common</module>
+		<module>court-pojo</module>
+		<module>court-server</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<mybatis.spring>2.3.1</mybatis.spring>
+		<lombok>1.18.20</lombok>
+		<fastjson>1.2.76</fastjson>
+		<pagehelper>1.4.1</pagehelper>
+		<knife4j>3.0.2</knife4j>
+		<jjwt>0.9.0</jjwt>
+		<aspectj>1.9.4</aspectj>
+        <elasticsearch>7.17.5</elasticsearch>
+        <log4j>2.8.2</log4j>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>2.5.5</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.spring}</version>
+			</dependency>
+
+<!--			<dependency>-->
+<!--				<groupId>org.mybatis.spring.boot</groupId>-->
+<!--				<artifactId>mybatis-spring-boot-starter-test</artifactId>-->
+<!--				<version>2.3.1</version>-->
+<!--			</dependency>-->
+
+
+
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>${pagehelper}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jjwt}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>2.7.16</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-cache</artifactId>
+				<version>2.7.14</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson}</version>
+			</dependency>
+
+
+			<!-- elasticsearch 的客户端 -->
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-high-level-client</artifactId>
+				<version>${elasticsearch}</version>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j}</version>
+			</dependency>
+
+
+
+
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			     <version>3.1</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
