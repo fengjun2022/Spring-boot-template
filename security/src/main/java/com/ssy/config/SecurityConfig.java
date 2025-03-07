@@ -24,7 +24,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 //开启方法级安全权限访问控制
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
+@EnableGlobalMethodSecurity(
+        prePostEnabled = true,   // 启用 @PreAuthorize 和 @PostAuthorize
+        securedEnabled = true,     // 启用 @Secured
+        jsr250Enabled = true   )    // 启用 @RolesAllowed)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 

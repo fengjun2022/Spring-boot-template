@@ -32,13 +32,17 @@ public class CustomUserDetails implements UserDetails {
     // 这里返回用户对应的权限列表
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-  if (user.getAuthorities()!=null){
-      return user.getAuthorities().stream()
-              .map(SimpleGrantedAuthority::new) // 将 Collection内容转换为 SimpleGrantedAuthority
-              .collect(Collectors.toList());
-  }
+        if (user.getAuthorities() != null) {
+            return user.getAuthorities().stream()
+                    .map(auth -> {
+                        if (!auth.startsWith("ROLE_")) {
+                            return new SimpleGrantedAuthority("ROLE_" + auth);
+                        }
+                        return new SimpleGrantedAuthority(auth);
+                    })
+                    .collect(Collectors.toList());
+        }
         return Collections.emptyList();
-
     }
 
     @Override

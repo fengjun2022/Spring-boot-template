@@ -49,6 +49,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         this.authenticationManager = authenticationManager;
         // 设置自定义处理登录请求的 URL
         setFilterProcessesUrl("/login");
+        setFilterProcessesUrl("/login-admin");
+
     }
 
     // 从请求中解析 JSON 格式的用户名和密码
