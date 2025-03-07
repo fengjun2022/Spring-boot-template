@@ -6,11 +6,7 @@ sbt:
     username: root
     password: ntjcy@2014
 
-   # AccessKey ID
-    #  LTAI5tDZXgD6SgVydKy18N7u
 
-    #  AccessKey Secret
-    #  EwvCmq5kswYbmxBbFbAT9nUC4kGyq7
   redis:
      host: localhost
      port: 6379
