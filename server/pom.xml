@@ -7,8 +7,8 @@
 
     <parent>
         <!-- 父模块的GAV坐标 -->
-        <groupId>com.nangtong</groupId>
-        <artifactId>nangtong-court</artifactId>
+        <groupId>com.template</groupId>
+        <artifactId>parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
@@ -27,7 +27,6 @@
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
         </dependency>
 
 
@@ -38,22 +37,26 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.template</groupId>
+            <artifactId>security</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
-            <groupId>com.nangtong</groupId>
+            <groupId>com.template</groupId>
             <artifactId>pojo</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.nangtong</groupId>
+            <groupId>com.template</groupId>
             <artifactId>common</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
-
-    
 
 
         <dependency>
@@ -107,7 +110,11 @@
             <artifactId>aspectjweaver</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -116,11 +123,7 @@
         </dependency>
 
 
-        <!-- elasticsearch 的客户端 -->
-        <dependency>
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>elasticsearch-rest-high-level-client</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -142,7 +145,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
 
-                    <mainClass>com.court.MainApplication</mainClass>
+                    <mainClass>com.main.MainApplication</mainClass>
 
                     <excludes>
                         <exclude>

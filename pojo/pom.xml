@@ -5,8 +5,8 @@
 
     <parent>
         <!-- 父模块的GAV坐标 -->
-        <groupId>com.nangtong</groupId>
-        <artifactId>nangtong-court</artifactId>
+        <groupId>com.template</groupId>
+        <artifactId>parent</artifactId>
         <version>1.0.0</version>
     </parent>
 

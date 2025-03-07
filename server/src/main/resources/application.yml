@@ -1,12 +1,12 @@
 #file: noinspection SpringBootApplicationYaml,SpringBootApplicationYaml,SpringBootApplicationYaml,SpringBootApplicationYaml,SpringBootApplicationYaml
 spring:
   profiles:
-    active: test
+    active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${court.datasource.host}:${court.datasource.port}/
-    username: ${court.datasource.username}
-    password: ${court.datasource.password}
+    url: jdbc:mysql://${sbt.datasource.host}:${sbt.datasource.port}/?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${sbt.datasource.username}
+    password: ${sbt.datasource.password}
 
   servlet:
     multipart:
@@ -20,7 +20,7 @@ mybatis:
     map-underscore-to-camel-case: true
 
 server:
-  port: 8081
+  port: 8080
 
 #debug: true
 # 设置日志级别，root表示根节点，即整体应用日志级别
@@ -35,11 +35,4 @@ logging:
 
 
 
-jwt:
-    # 设置jwt签名加密时使用的秘钥
-  secret-key: nangtongcourtjj1001001
-    # 设置jwt过期时间 8小时
-  ttl: 28800000
-    # 设置前端传递过来的令牌名称
-  token-name: Authorization
 

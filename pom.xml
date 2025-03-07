@@ -9,8 +9,8 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.nangtong</groupId>
-	<artifactId>nangtong-court</artifactId>
+	<groupId>com.template</groupId>
+	<artifactId>parent</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
@@ -19,6 +19,7 @@
 		<module>common</module>
 		<module>pojo</module>
 		<module>server</module>
+		<module>security</module>
 	</modules>
 
 	<properties>
@@ -28,22 +29,52 @@
 		<fastjson>1.2.76</fastjson>
 		<pagehelper>1.4.1</pagehelper>
 		<knife4j>3.0.2</knife4j>
-		<jjwt>0.9.0</jjwt>
 		<aspectj>1.9.4</aspectj>
-        <elasticsearch>7.17.5</elasticsearch>
+
         <log4j>2.8.2</log4j>
+		<security>2.2.5.RELEASE</security>
+		<oauth2>2.2.5.RELEASE</oauth2>
+		<java.jwt>4.2.1</java.jwt>
+		<spring-web>2.5.5</spring-web>
+		<javax>2.3.0</javax>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-security</artifactId>
+				<version>${security}</version>
+			</dependency>
 
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-oauth2</artifactId>
+				<version>${oauth2}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>2021.0.7</version> <!-- 兼容 Spring Boot 2.7.x -->
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
-				<version>2.5.5</version>
+				<version>${spring-web}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${javax}</version>
+			</dependency>
+
+
 
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
@@ -58,6 +89,12 @@
 <!--			</dependency>-->
 
 
+
+			<dependency>
+				<groupId>com.auth0</groupId>
+				<artifactId>java-jwt</artifactId>
+				<version>${java.jwt}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>com.github.pagehelper</groupId>
@@ -78,24 +115,7 @@
 			</dependency>
 
 
-			<dependency>
-				<groupId>io.jsonwebtoken</groupId>
-				<artifactId>jjwt</artifactId>
-				<version>${jjwt}</version>
-			</dependency>
 
-
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-data-redis</artifactId>
-				<version>2.7.16</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-cache</artifactId>
-				<version>2.7.14</version>
-			</dependency>
 
 
 			<dependency>
@@ -109,14 +129,6 @@
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
 				<version>${fastjson}</version>
-			</dependency>
-
-
-			<!-- elasticsearch 的客户端 -->
-			<dependency>
-				<groupId>org.elasticsearch.client</groupId>
-				<artifactId>elasticsearch-rest-high-level-client</artifactId>
-				<version>${elasticsearch}</version>
 			</dependency>
 
 
