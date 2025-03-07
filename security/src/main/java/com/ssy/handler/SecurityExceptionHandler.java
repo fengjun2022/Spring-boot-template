@@ -40,12 +40,6 @@ public class SecurityExceptionHandler {
 
 
 
-    @ExceptionHandler(AccessDeniedException.class)
-    public Result handlerGlobalException(AccessDeniedException e) {
-        logger.error(e.getMessage(), e);
-        return Result.error(e.getMessage());
-    }
-
 
 
 
@@ -62,17 +56,6 @@ public class SecurityExceptionHandler {
 
 
 
-
-    /**
-     * 处理 Exception 异常
-     * @param e 异常
-     * @return 处理结果
-     */
-    @ExceptionHandler(Exception.class)
-    public Result handlerException(Exception e) {
-        logger.error(e.getMessage(), e);
-        return Result.error("系统异常");
-    }
 
 
 

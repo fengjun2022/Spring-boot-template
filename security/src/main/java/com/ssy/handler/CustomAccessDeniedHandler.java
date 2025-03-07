@@ -28,7 +28,6 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
                        HttpServletResponse response,
                        AccessDeniedException accessDeniedException)
             throws IOException, ServletException {
-        System.out.println("=== CustomAccessDeniedHandler invoked ===");
 
         // 这里可以自定义返回的状态码、响应格式等
         response.setStatus(HttpStatus.BAD_REQUEST);
