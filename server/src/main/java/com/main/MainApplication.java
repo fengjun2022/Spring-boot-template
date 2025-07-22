@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableScheduling
 @SpringBootApplication(scanBasePackages ={"com.main","com.pojo","com.common", "com.ssy"})
 // 扫描安全框架的mapper
-@MapperScan(basePackages = {"com.ssy.mapper", "com.main.mapper"})
+@MapperScan(basePackages = {"com.ssy.mapper","com.main.mapper"})
 public class MainApplication {
 
     public static void main(String[] args) {
