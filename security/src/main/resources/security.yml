@@ -2,6 +2,15 @@ security:
   permit-all: # 权限访问白名单
     - "/login"
     - "/user/**"
+    - "/doc.html"
+    - "/swagger-ui.html"
+    -  "/swagger-ui/**"
+    -  "/swagger-resources/**"
+    -  "/v2/api-docs"
+    -  "/v2/api-docs/**"
+    -  "/v3/api-docs"
+    -  "/v3/api-docs/**"
+    -  "/webjars/**"
   role-based: # 需要权限名单
     - pattern: "/admin/**"
       role: ADMIN

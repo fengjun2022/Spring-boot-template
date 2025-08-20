@@ -1,5 +1,8 @@
 #file: noinspection SpringBootApplicationYaml,SpringBootApplicationYaml,SpringBootApplicationYaml,SpringBootApplicationYaml,SpringBootApplicationYaml
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   profiles:
     active: dev
   datasource:
@@ -34,5 +37,14 @@ logging:
     name: logs/system.log        # 将日志存在logs下的system.log日志中
 
 
+knife4j:
+  production: false
+  documents:
+    - group: 默认分组
+      name: 接口说明
+      locations: classpath:markdown/*
+  setting:
+    language: zh_cn
+    swagger-model-name: 实体类列表
 
 

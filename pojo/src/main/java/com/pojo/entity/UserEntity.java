@@ -2,6 +2,7 @@ package com.pojo.entity;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -16,8 +17,11 @@ import java.util.List;
  */
 @Data
 public class UserEntity implements Serializable {
+
      private long id;
+     @NotNull(message="账号名不能为空")
      private String username;
+     @NotNull(message="密码不能为空")
      private String password;
      private Collection<String> authorities;
 }

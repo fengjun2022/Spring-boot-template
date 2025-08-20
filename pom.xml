@@ -37,10 +37,32 @@
 		<java.jwt>4.2.1</java.jwt>
 		<spring-web>2.5.5</spring-web>
 		<javax>2.3.0</javax>
+		<fasterxml>1.5.1</fasterxml>
+		<knife4j>3.0.3</knife4j>
+		<springfox>3.0.0</springfox>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- 使用 Springfox Swagger 3.0.0 -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-boot-starter</artifactId>
+				<version>${springfox}</version>
+			</dependency>
+
+			<!-- Knife4j 2.x 系列（适用于 Spring Boot 2.5.5） -->
+			<dependency>
+				<groupId>com.github.xiaoymin</groupId>
+				<artifactId>knife4j-spring-boot-starter</artifactId>
+				<version>${knife4j}</version>
+			</dependency>
+			<!-- 显式补充 classmate，确保 TypeResolver 可用 -->
+			<dependency>
+				<groupId>com.fasterxml</groupId>
+				<artifactId>classmate</artifactId>
+				<version>${fasterxml}</version> <!-- 或 1.6.x，任选其一，保持与 Springfox 兼容 -->
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
